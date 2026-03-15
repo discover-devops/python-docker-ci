@@ -6,7 +6,13 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/discover-devops/python-docker-ci.git'
+                git branch: 'main', url: 'https://github.com/discover-devops/python-docker-ci.git'
+            }
+        }
+
+        stage('Verify Files') {
+            steps {
+                sh 'ls -ltr'
             }
         }
 
